@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #efede6;
+  --surface-3: #e4e1d7;
+  --text: #1d2125;
+  --muted: #6b6f74;
+  --faint: #9a9da1;
+  --border: #dedbd2;
+  --accent: #2f5d62;
+  --accent-soft: #dcebe9;
+  --accent-text: #ffffff;
+  --gold: #e9a23b;
+  --danger: #c4372f;
+  --danger-soft: #f8dedb;
+  --warn: #c66b12;
+  --warn-soft: #fae7d2;
+  --flag: #e08a12;
+  --select: #d9e8f2;
+  --select-strong: #bcd5e6;
+  --shadow: 0 8px 28px rgb(20 22 26 / 0.16);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #14161a;
+  --surface: #1c1f24;
+  --surface-2: #24282e;
+  --surface-3: #30353c;
+  --text: #e9e7e1;
+  --muted: #a1a5ab;
+  --faint: #737880;
+  --border: #33383f;
+  --accent: #6fb3b0;
+  --accent-soft: #23393a;
+  --accent-text: #0f1214;
+  --gold: #f0b65a;
+  --danger: #ff6b5f;
+  --danger-soft: #3d2120;
+  --warn: #f29a45;
+  --warn-soft: #3b2a19;
+  --flag: #f2a33a;
+  --select: #22364a;
+  --select-strong: #2c4863;
+  --shadow: 0 8px 28px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--accent-text);
+  --color-gold: var(--gold);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-flag: var(--flag);
+  --color-select: var(--select);
+  --color-select-strong: var(--select-strong);
+  --shadow-pop: var(--shadow);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+/* Component classes live in the components layer so Tailwind utilities (e.g. md:hidden) can override them. */
+@layer components {
+.pb-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.pb-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.pb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pb-btn:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+
+.pb-btn:disabled {
+  opacity: 0.5;
+}
+
+.pb-btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.pb-btn-primary:hover:not(:disabled) {
+  background: var(--accent);
+  filter: brightness(1.08);
+}
+
+.pb-btn-danger {
+  color: var(--danger);
+}
+
+.pb-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+  color: var(--muted);
+}
+
+.pb-icon-btn:hover:not(:disabled) {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.pb-icon-btn:disabled {
+  opacity: 0.35;
+}
+
+/* Natural width, left aligned: never stretched by a flex-column or grid parent. */
+.pb-seg {
+  display: inline-flex;
+  align-self: flex-start;
+  justify-self: start;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.pb-seg > button {
+  min-height: 44px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  border-right: 1px solid var(--border);
+}
+
+.pb-seg > button:last-child {
+  border-right: 0;
+}
+
+.pb-seg > button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.pb-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.pb-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+mark.pb-hl {
+  background: color-mix(in srgb, var(--gold) 45%, transparent);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+/* Desktop (pointer) layouts can be denser; phones keep the 44 px minimum touch target (spec §12). */
+@media (min-width: 768px) {
+  .pb-input,
+  .pb-btn {
+    min-height: 40px;
+  }
+
+  .pb-seg > button {
+    min-height: 36px;
+  }
+}
+
+/* Expands a small control's touch target to at least 44×44 px without changing its look (spec §12). */
+.pb-hit {
+  position: relative;
+}
+
+.pb-hit::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  min-width: 44px;
+  min-height: 44px;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.pb-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+}
+
+@keyframes pb-slide-up {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pb-slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pb-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pb-anim-up {
+  animation: pb-slide-up 160ms ease-out;
+}
+
+.pb-anim-left {
+  animation: pb-slide-in-left 180ms ease-out;
+}
+
+.pb-anim-fade {
+  animation: pb-fade 140ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-anim-up,
+  .pb-anim-left,
+  .pb-anim-fade {
+    animation: none;
+  }
+}

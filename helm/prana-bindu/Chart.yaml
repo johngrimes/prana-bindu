@@ -1,0 +1,12 @@
+apiVersion: v2
+name: prana-bindu
+description: Single-user, mobile-first task manager with a REST API and an MCP server.
+type: application
+version: 0.2.1
+appVersion: "0.1.0"
+kubeVersion: ">=1.23.0-0"
+home: https://github.com/johngrimes/prana-bindu
+sources:
+  - https://github.com/johngrimes/prana-bindu
+annotations:
+  artifacthub.io/license: Apache-2.0

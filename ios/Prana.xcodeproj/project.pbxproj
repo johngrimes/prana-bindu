@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2550F9B940E455B70EA2FB6D /* PranaWidget.appex in Embed Foundation Extensions */ = {
+			isa = PBXBuildFile; fileRef = 125F9E1795A893C7CA234E61 /* PranaWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
+		};
+		3025DEC279155C7F5876FDAE /* PranaKit in Frameworks */ = {
+			isa = PBXBuildFile; productRef = E48D39A6BCE8259323921494 /* PranaKit */;
+		};
+		4612EDA35012075270A72090 /* PranaKit in Frameworks */ = {
+			isa = PBXBuildFile; productRef = 258413C9600C7D19D0B2BF73 /* PranaKit */;
+		};
+		5ACAA71F37C6E44CFE5F6C72 /* PranaKit in Frameworks */ = {
+			isa = PBXBuildFile; productRef = B7E48BEFF9F4BDD7F83538D3 /* PranaKit */;
+		};
+		9EC0775C41E0F25A99EBF2BD /* PranaKit in Frameworks */ = {
+			isa = PBXBuildFile; productRef = 6686326D994ABC1708A60006 /* PranaKit */;
+		};
+		A1CF0813888FF352C4D91FAD /* PranaWatch.app in Embed Watch Content */ = {
+			isa = PBXBuildFile; fileRef = 9F56E38A394EB25BCE8F6495 /* PranaWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
+		};
+		A1D7CCB4EDF899FACE99F97A /* PranaKit in Frameworks */ = {
+			isa = PBXBuildFile; productRef = BECE69EA86C2A8F93A98A7CC /* PranaKit */;
+		};
+		BDE9ACCC71D57AB386675C53 /* PranaShare.appex in Embed Foundation Extensions */ = {
+			isa = PBXBuildFile; fileRef = 77CFCF34641C2092AF7D468F /* PranaShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
+		};
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		015F8635F757E7F4A7C36515 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy; containerPortal = DBE090BAC9F93B8F5D089DD8 /* Project object */; proxyType = 1; remoteGlobalIDString = E4207C329EC14437E455D02C; remoteInfo = PranaWidget;
+		};
+		B2C03E1E4F55CD7274AE8065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy; containerPortal = DBE090BAC9F93B8F5D089DD8 /* Project object */; proxyType = 1; remoteGlobalIDString = F7F17FBDFFD846BC8DD7FF08; remoteInfo = Prana;
+		};
+		BF2B6818D634934D7FC499E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy; containerPortal = DBE090BAC9F93B8F5D089DD8 /* Project object */; proxyType = 1; remoteGlobalIDString = 51134DA59DFEAB5034BC4774; remoteInfo = PranaWatch;
+		};
+		EA9CB20476E0E3045F834514 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy; containerPortal = DBE090BAC9F93B8F5D089DD8 /* Project object */; proxyType = 1; remoteGlobalIDString = CB6A24D24D45E33BB57E087C; remoteInfo = PranaShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		12080227EE6D43FF76E63205 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = "$(CONTENTS_FOLDER_PATH)/Watch"; dstSubfolderSpec = 16; files = (
+				A1CF0813888FF352C4D91FAD /* PranaWatch.app in Embed Watch Content */,
+			); name = "Embed Watch Content"; runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0902B201BB9E488CAF2EA9B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (
+				2550F9B940E455B70EA2FB6D /* PranaWidget.appex in Embed Foundation Extensions */,
+				BDE9ACCC71D57AB386675C53 /* PranaShare.appex in Embed Foundation Extensions */,
+			); name = "Embed Foundation Extensions"; runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		10C4C0D0BA73611B50B403B8 /* PranaShare.entitlements */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PranaShare.entitlements; sourceTree = "<group>";
+		};
+		125F9E1795A893C7CA234E61 /* PranaWidget.appex */ = {
+			isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PranaWidget.appex; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218813A6DE3193D0B6E5C61D /* Prana.app */ = {
+			isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prana.app; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B3E73D3C90B095574EE4BE9 /* PranaShare-Info.plist */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PranaShare-Info.plist; sourceTree = "<group>";
+		};
+		5D384C5E1571F1B23CC9A059 /* PranaWatch-Info.plist */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PranaWatch-Info.plist; sourceTree = "<group>";
+		};
+		632FA0B569F0F2576B3E9E39 /* PranaUITests.xctest */ = {
+			isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PranaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77CFCF34641C2092AF7D468F /* PranaShare.appex */ = {
+			isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PranaShare.appex; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7F1E1F9BED2CBE64755756B2 /* Prana.entitlements */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prana.entitlements; sourceTree = "<group>";
+		};
+		9F56E38A394EB25BCE8F6495 /* PranaWatch.app */ = {
+			isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PranaWatch.app; sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A152F43D4241CBA4E73E0072 /* PranaKit */ = {
+			isa = PBXFileReference; lastKnownFileType = wrapper; path = PranaKit; sourceTree = "<group>";
+		};
+		C538FC2C40028A0CA7BFEC3F /* Prana-Info.plist */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Prana-Info.plist; sourceTree = "<group>";
+		};
+		D741751219823E541DDD9FB3 /* Base.xcconfig */ = {
+			isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>";
+		};
+		DBDC6FC930176D43372A9CEB /* PranaWidget-Info.plist */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PranaWidget-Info.plist; sourceTree = "<group>";
+		};
+		DF4EC9CC4878ADFAD0A4E408 /* PranaWidget.entitlements */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PranaWidget.entitlements; sourceTree = "<group>";
+		};
+		EEBCA029301765926D9117B4 /* PranaWatch.entitlements */ = {
+			isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PranaWatch.entitlements; sourceTree = "<group>";
+		};
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		197125150954FC386162D9A5 /* Prana */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = Prana; sourceTree = "<group>";
+		};
+		69686955D3B43C09823898AA /* PranaWatch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = PranaWatch; sourceTree = "<group>";
+		};
+		74F06D55E5A6AF2F69BB43BC /* SharedResources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = SharedResources; sourceTree = "<group>";
+		};
+		8FD78071B90BCBC088A8E0E0 /* PranaShare */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = PranaShare; sourceTree = "<group>";
+		};
+		A18EE1757238C8FA95C8A90E /* PranaWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = PranaWidget; sourceTree = "<group>";
+		};
+		C6B147F7FA0BAC41EDF6F3EA /* PranaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup; path = PranaUITests; sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10FFD57146AF6886D348BFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				A1D7CCB4EDF899FACE99F97A /* PranaKit in Frameworks */,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		16E195BC23EE6E6EC5583C75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				5ACAA71F37C6E44CFE5F6C72 /* PranaKit in Frameworks */,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		1ED3057CCE7B632570A6D9E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				4612EDA35012075270A72090 /* PranaKit in Frameworks */,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		836EFB47F22D79BEF272D508 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				9EC0775C41E0F25A99EBF2BD /* PranaKit in Frameworks */,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8A1D63851BBCA2B1E6E8897 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+				3025DEC279155C7F5876FDAE /* PranaKit in Frameworks */,
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71DC27D9F8E3B109C877BFC4 = {
+			isa = PBXGroup; children = (
+				D5B807729C9161D8C6C93C82 /* Config */,
+				A152F43D4241CBA4E73E0072 /* PranaKit */,
+				197125150954FC386162D9A5 /* Prana */,
+				A18EE1757238C8FA95C8A90E /* PranaWidget */,
+				8FD78071B90BCBC088A8E0E0 /* PranaShare */,
+				69686955D3B43C09823898AA /* PranaWatch */,
+				C6B147F7FA0BAC41EDF6F3EA /* PranaUITests */,
+				74F06D55E5A6AF2F69BB43BC /* SharedResources */,
+				72A79544FC4DD10045022645 /* Products */,
+			); sourceTree = "<group>";
+		};
+		72A79544FC4DD10045022645 /* Products */ = {
+			isa = PBXGroup; children = (
+				218813A6DE3193D0B6E5C61D /* Prana.app */,
+				125F9E1795A893C7CA234E61 /* PranaWidget.appex */,
+				77CFCF34641C2092AF7D468F /* PranaShare.appex */,
+				9F56E38A394EB25BCE8F6495 /* PranaWatch.app */,
+				632FA0B569F0F2576B3E9E39 /* PranaUITests.xctest */,
+			); name = Products; sourceTree = "<group>";
+		};
+		D5B807729C9161D8C6C93C82 /* Config */ = {
+			isa = PBXGroup; children = (
+				D741751219823E541DDD9FB3 /* Base.xcconfig */,
+				C538FC2C40028A0CA7BFEC3F /* Prana-Info.plist */,
+				DBDC6FC930176D43372A9CEB /* PranaWidget-Info.plist */,
+				5B3E73D3C90B095574EE4BE9 /* PranaShare-Info.plist */,
+				5D384C5E1571F1B23CC9A059 /* PranaWatch-Info.plist */,
+				7F1E1F9BED2CBE64755756B2 /* Prana.entitlements */,
+				DF4EC9CC4878ADFAD0A4E408 /* PranaWidget.entitlements */,
+				10C4C0D0BA73611B50B403B8 /* PranaShare.entitlements */,
+				EEBCA029301765926D9117B4 /* PranaWatch.entitlements */,
+			); path = Config; sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51134DA59DFEAB5034BC4774 /* PranaWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6668ACCDCBEC860202AAFC70 /* Build configuration list for PranaWatch */;
+			buildPhases = (
+				CD8A3ADE91072E90FF7A0676 /* Sources */,
+				836EFB47F22D79BEF272D508 /* Frameworks */,
+				C2E0A56A2DC9F35AB4A207FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				69686955D3B43C09823898AA /* PranaWatch */,
+				74F06D55E5A6AF2F69BB43BC /* SharedResources */,
+			);
+			name = PranaWatch;
+			packageProductDependencies = (
+				6686326D994ABC1708A60006 /* PranaKit */,
+			);
+			productName = PranaWatch;
+			productReference = 9F56E38A394EB25BCE8F6495 /* PranaWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3A3572D8DFFDF62E486C858 /* PranaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42295EC82EEFD4A9301AB7EF /* Build configuration list for PranaUITests */;
+			buildPhases = (
+				A0F2108A2F8EC4E50D4C20AE /* Sources */,
+				1ED3057CCE7B632570A6D9E7 /* Frameworks */,
+				E60767455B936BAC90EF3B32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				738EF600FBE0BCD45F1A2BA3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C6B147F7FA0BAC41EDF6F3EA /* PranaUITests */,
+			);
+			name = PranaUITests;
+			packageProductDependencies = (
+				258413C9600C7D19D0B2BF73 /* PranaKit */,
+			);
+			productName = PranaUITests;
+			productReference = 632FA0B569F0F2576B3E9E39 /* PranaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CB6A24D24D45E33BB57E087C /* PranaShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24021539DDF7C3B15042ADD0 /* Build configuration list for PranaShare */;
+			buildPhases = (
+				B170C4B67BB904990271E1A4 /* Sources */,
+				10FFD57146AF6886D348BFEA /* Frameworks */,
+				6CFB63341BF85677083F1B70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8FD78071B90BCBC088A8E0E0 /* PranaShare */,
+			);
+			name = PranaShare;
+			packageProductDependencies = (
+				BECE69EA86C2A8F93A98A7CC /* PranaKit */,
+			);
+			productName = PranaShare;
+			productReference = 77CFCF34641C2092AF7D468F /* PranaShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E4207C329EC14437E455D02C /* PranaWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 570A02615D2B90C85488FDFD /* Build configuration list for PranaWidget */;
+			buildPhases = (
+				EBDBF546E8D7BA07FB73312C /* Sources */,
+				E8A1D63851BBCA2B1E6E8897 /* Frameworks */,
+				BB49602B27F94E5DE2E18EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A18EE1757238C8FA95C8A90E /* PranaWidget */,
+			);
+			name = PranaWidget;
+			packageProductDependencies = (
+				E48D39A6BCE8259323921494 /* PranaKit */,
+			);
+			productName = PranaWidget;
+			productReference = 125F9E1795A893C7CA234E61 /* PranaWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F7F17FBDFFD846BC8DD7FF08 /* Prana */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57ED9972542429C0BD0987FB /* Build configuration list for Prana */;
+			buildPhases = (
+				F17FCC4437BCCF21F58F73F6 /* Sources */,
+				16E195BC23EE6E6EC5583C75 /* Frameworks */,
+				C9AC4C5A75BFDE4D440651AE /* Resources */,
+				B0902B201BB9E488CAF2EA9B /* Embed Foundation Extensions */,
+				12080227EE6D43FF76E63205 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4B04E7F195E767C766A0490 /* PBXTargetDependency */,
+				A2D7F8BB6363A134BB69C10B /* PBXTargetDependency */,
+				EF149333FADDBD354C3718B6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				197125150954FC386162D9A5 /* Prana */,
+				74F06D55E5A6AF2F69BB43BC /* SharedResources */,
+			);
+			name = Prana;
+			packageProductDependencies = (
+				B7E48BEFF9F4BDD7F83538D3 /* PranaKit */,
+			);
+			productName = Prana;
+			productReference = 218813A6DE3193D0B6E5C61D /* Prana.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBE090BAC9F93B8F5D089DD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					F7F17FBDFFD846BC8DD7FF08 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					E4207C329EC14437E455D02C = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					CB6A24D24D45E33BB57E087C = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					51134DA59DFEAB5034BC4774 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					C3A3572D8DFFDF62E486C858 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = F7F17FBDFFD846BC8DD7FF08;
+					};
+				};
+			};
+			buildConfigurationList = 1882AA877BE6C3584EE7CF6F /* Build configuration list for Prana.project */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71DC27D9F8E3B109C877BFC4;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 72A79544FC4DD10045022645 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7F17FBDFFD846BC8DD7FF08 /* Prana */,
+				E4207C329EC14437E455D02C /* PranaWidget */,
+				CB6A24D24D45E33BB57E087C /* PranaShare */,
+				51134DA59DFEAB5034BC4774 /* PranaWatch */,
+				C3A3572D8DFFDF62E486C858 /* PranaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CFB63341BF85677083F1B70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB49602B27F94E5DE2E18EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E0A56A2DC9F35AB4A207FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9AC4C5A75BFDE4D440651AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		E60767455B936BAC90EF3B32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0F2108A2F8EC4E50D4C20AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		B170C4B67BB904990271E1A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8A3ADE91072E90FF7A0676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBDBF546E8D7BA07FB73312C /* Sources */ = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+		F17FCC4437BCCF21F58F73F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			); runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		738EF600FBE0BCD45F1A2BA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency; target = F7F17FBDFFD846BC8DD7FF08 /* Prana */; targetProxy = B2C03E1E4F55CD7274AE8065 /* PBXContainerItemProxy */;
+		};
+		A2D7F8BB6363A134BB69C10B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency; target = CB6A24D24D45E33BB57E087C /* PranaShare */; targetProxy = EA9CB20476E0E3045F834514 /* PBXContainerItemProxy */;
+		};
+		B4B04E7F195E767C766A0490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency; target = E4207C329EC14437E455D02C /* PranaWidget */; targetProxy = 015F8635F757E7F4A7C36515 /* PBXContainerItemProxy */;
+		};
+		EF149333FADDBD354C3718B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency; target = 51134DA59DFEAB5034BC4774 /* PranaWatch */; targetProxy = BF2B6818D634934D7FC499E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		065327E1C5DD550EC5829C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Prana;
+			};
+			name = Release;
+		};
+		0B2811CE712DEE5D129E0A2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D741751219823E541DDD9FB3 /* Base.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16C53C9B18524A18F1CA7F4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Prana;
+			};
+			name = Debug;
+		};
+		1892D9CD1294A44A3593FBB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/PranaWatch.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaWatch-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		1C02E2B87D2E9059461E6E6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/PranaWidget.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		47823C07822F4A10D2AFB4A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/PranaWatch.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaWatch-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		571E2F57E0D7F20B2B2E93AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D741751219823E541DDD9FB3 /* Base.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		626BC001E751F7313D55DFF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/PranaShare.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaShare-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6324227E9CE84B65FC5F978D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/PranaShare.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaShare-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		63BEF635AD0EB377580E3B78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Prana.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Prana-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80F59E38396B5A01A62DF724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/PranaWidget.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/PranaWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID).widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97B9668ACA3CB64D7CE8316F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/Prana.entitlements;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Prana-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Prana;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRANA_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1882AA877BE6C3584EE7CF6F /* Build configuration list for Prana.project */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				0B2811CE712DEE5D129E0A2B /* Debug */,
+				571E2F57E0D7F20B2B2E93AD /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		24021539DDF7C3B15042ADD0 /* Build configuration list for PranaShare */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				626BC001E751F7313D55DFF4 /* Debug */,
+				6324227E9CE84B65FC5F978D /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		42295EC82EEFD4A9301AB7EF /* Build configuration list for PranaUITests */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				16C53C9B18524A18F1CA7F4D /* Debug */,
+				065327E1C5DD550EC5829C8E /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		570A02615D2B90C85488FDFD /* Build configuration list for PranaWidget */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				80F59E38396B5A01A62DF724 /* Debug */,
+				1C02E2B87D2E9059461E6E6B /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		57ED9972542429C0BD0987FB /* Build configuration list for Prana */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				63BEF635AD0EB377580E3B78 /* Debug */,
+				97B9668ACA3CB64D7CE8316F /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+		6668ACCDCBEC860202AAFC70 /* Build configuration list for PranaWatch */ = {
+			isa = XCConfigurationList; buildConfigurations = (
+				47823C07822F4A10D2AFB4A5 /* Debug */,
+				1892D9CD1294A44A3593FBB1 /* Release */,
+			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */ = {
+			isa = XCLocalSwiftPackageReference; relativePath = PranaKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		258413C9600C7D19D0B2BF73 /* PranaKit */ = {
+			isa = XCSwiftPackageProductDependency; package = 54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */; productName = PranaKit;
+		};
+		6686326D994ABC1708A60006 /* PranaKit */ = {
+			isa = XCSwiftPackageProductDependency; package = 54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */; productName = PranaKit;
+		};
+		B7E48BEFF9F4BDD7F83538D3 /* PranaKit */ = {
+			isa = XCSwiftPackageProductDependency; package = 54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */; productName = PranaKit;
+		};
+		BECE69EA86C2A8F93A98A7CC /* PranaKit */ = {
+			isa = XCSwiftPackageProductDependency; package = 54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */; productName = PranaKit;
+		};
+		E48D39A6BCE8259323921494 /* PranaKit */ = {
+			isa = XCSwiftPackageProductDependency; package = 54637C4ED93ABD7D95927C3E /* XCLocalSwiftPackageReference "PranaKit" */; productName = PranaKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DBE090BAC9F93B8F5D089DD8 /* Project object */;
+}

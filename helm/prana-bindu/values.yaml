@@ -1,0 +1,60 @@
+pranaBindu:
+  image: "prana-bindu:latest"
+  imagePullPolicy: "Always"
+  imagePullSecrets: []
+
+  resources:
+    {}
+    # requests:
+    #   memory: "128Mi"
+    #   cpu: "100m"
+    # limits:
+    #   memory: "512Mi"
+
+  # PRANA_* environment variables (see the application README).
+  config: {}
+  # PRANA_* environment variables stored in a Secret, e.g. PRANA_S3_SECRET_ACCESS_KEY.
+  secretConfig: {}
+
+  persistence:
+    enabled: false
+    size: "1Gi"
+    storageClassName: ~
+    accessMode: "ReadWriteOnce"
+
+  # Scheduled `prana-bindu backup` to S3-compatible storage. Needs persistence and the PRANA_BACKUP_S3_* variables
+  # in config/secretConfig.
+  backup:
+    enabled: false
+    schedule: "0 3 * * *"
+    timeZone: ~
+    successfulJobsHistoryLimit: 3
+    failedJobsHistoryLimit: 3
+    resources:
+      {}
+      # requests:
+      #   memory: "128Mi"
+      #   cpu: "100m"
+      # limits:
+      #   memory: "512Mi"
+
+  service:
+    type: "ClusterIP"
+    port: 80
+
+  # The image's USER is "node" (UID/GID 1000). Kubernetes cannot verify runAsNonRoot for a named user,
+  # so the IDs are set explicitly; fsGroup makes /data writable.
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+  securityContext:
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop: ["ALL"]
+
+  terminationGracePeriodSeconds: 30
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}

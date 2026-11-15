@@ -1,0 +1,16 @@
+prana-bindu is starting.
+{{- if not .Values.pranaBindu.persistence.enabled }}
+
+WARNING: persistence is disabled. The database lives in an emptyDir volume and is
+lost whenever the pod is deleted. Set pranaBindu.persistence.enabled=true to keep it.
+{{- end }}
+{{- if not (hasKey .Values.pranaBindu.config "PRANA_ORIGIN") }}
+
+PRANA_ORIGIN is not set, so passkeys are bound to http://localhost:3000. Reach the app with:
+
+  kubectl --namespace {{ .Release.Namespace }} port-forward service/{{ .Release.Name }}-service 3000:{{ .Values.pranaBindu.service.port }}
+{{- end }}
+
+Enroll the first passkey (open the printed link within 15 minutes):
+
+  kubectl --namespace {{ .Release.Namespace }} exec deployment/{{ .Release.Name }}-deployment -- prana-bindu passkey enroll

@@ -1,0 +1,590 @@
+{
+ "now": "2026-10-31T04:20:00.000Z",
+ "forecast": {
+  "today": "2026-10-31",
+  "days": [
+   {
+    "key": "PAST",
+    "date": null,
+    "title": "Past",
+    "dueCount": 0,
+    "count": 0,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": []
+   },
+   {
+    "key": "TODAY",
+    "date": "2026-10-31",
+    "title": "Today",
+    "dueCount": 0,
+    "count": 5,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": [
+     {
+      "kind": "task",
+      "id": "k1ktkg8vbJw",
+      "depth": 0,
+      "task": {
+       "id": "k1ktkg8vbJw",
+       "name": "Routine",
+       "note": "",
+       "parentId": null,
+       "projectId": null,
+       "isProject": false,
+       "inInbox": true,
+       "rank": 0,
+       "flagged": false,
+       "deferDate": "2026-10-01T00:00:00.000",
+       "plannedDate": null,
+       "dueDate": null,
+       "estimatedMinutes": null,
+       "completed": null,
+       "dropped": null,
+       "added": "2026-10-31T04:20:00.000Z",
+       "modified": "2026-10-31T04:20:00.000Z",
+       "sequential": false,
+       "completedByChildren": false,
+       "repeat": {
+        "rule": "FREQ=DAILY",
+        "scheduleType": "regularly",
+        "anchorDate": "defer",
+        "catchUpAutomatically": false
+       },
+       "assignedProjectId": null,
+       "tagIds": [
+        "GuYg5uskzwW"
+       ],
+       "attachmentCount": 0,
+       "childCount": 0,
+       "remainingChildCount": 0,
+       "effectiveFlagged": false,
+       "effectiveDeferDate": "2026-10-01T00:00:00.000",
+       "effectivePlannedDate": null,
+       "effectiveDueDate": null,
+       "effectiveCompleted": false,
+       "effectiveDropped": false,
+       "remaining": true,
+       "deferred": false,
+       "blocked": false,
+       "available": true,
+       "firstAvailable": false,
+       "overdue": false,
+       "dueSoon": false,
+       "status": "available",
+       "projectName": null
+      }
+     },
+     {
+      "kind": "task",
+      "id": "xZWD9zs_HK5",
+      "depth": 0,
+      "task": {
+       "id": "xZWD9zs_HK5",
+       "name": "Report",
+       "note": "",
+       "parentId": null,
+       "projectId": null,
+       "isProject": false,
+       "inInbox": true,
+       "rank": 65536,
+       "flagged": false,
+       "deferDate": null,
+       "plannedDate": null,
+       "dueDate": "2026-12-24T09:30:00.000",
+       "estimatedMinutes": null,
+       "completed": null,
+       "dropped": null,
+       "added": "2026-10-31T04:20:00.000Z",
+       "modified": "2026-10-31T04:20:00.000Z",
+       "sequential": false,
+       "completedByChildren": false,
+       "repeat": null,
+       "assignedProjectId": null,
+       "tagIds": [
+        "GuYg5uskzwW"
+       ],
+       "attachmentCount": 0,
+       "childCount": 0,
+       "remainingChildCount": 0,
+       "effectiveFlagged": false,
+       "effectiveDeferDate": null,
+       "effectivePlannedDate": null,
+       "effectiveDueDate": "2026-12-24T09:30:00.000",
+       "effectiveCompleted": false,
+       "effectiveDropped": false,
+       "remaining": true,
+       "deferred": false,
+       "blocked": false,
+       "available": true,
+       "firstAvailable": false,
+       "overdue": false,
+       "dueSoon": false,
+       "status": "available",
+       "projectName": null
+      }
+     },
+     {
+      "kind": "project",
+      "id": "qos2iNk_kOl",
+      "depth": 0,
+      "project": {
+       "id": "qos2iNk_kOl",
+       "task": {
+        "id": "qos2iNk_kOl",
+        "name": "Garden project",
+        "note": "",
+        "parentId": null,
+        "projectId": "qos2iNk_kOl",
+        "isProject": true,
+        "inInbox": false,
+        "rank": 0,
+        "flagged": false,
+        "deferDate": null,
+        "plannedDate": null,
+        "dueDate": null,
+        "estimatedMinutes": null,
+        "completed": null,
+        "dropped": null,
+        "added": "2026-10-31T04:20:00.000Z",
+        "modified": "2026-10-31T04:20:00.000Z",
+        "sequential": false,
+        "completedByChildren": false,
+        "repeat": null,
+        "assignedProjectId": null,
+        "tagIds": [
+         "GuYg5uskzwW"
+        ],
+        "attachmentCount": 0,
+        "childCount": 2,
+        "remainingChildCount": 2,
+        "effectiveFlagged": false,
+        "effectiveDeferDate": null,
+        "effectivePlannedDate": null,
+        "effectiveDueDate": null,
+        "effectiveCompleted": false,
+        "effectiveDropped": false,
+        "remaining": true,
+        "deferred": false,
+        "blocked": true,
+        "available": false,
+        "firstAvailable": false,
+        "overdue": false,
+        "dueSoon": false,
+        "status": "blocked",
+        "projectName": "Garden project"
+       },
+       "folderId": null,
+       "type": "sequential",
+       "status": "active",
+       "effectiveStatus": "active",
+       "reviewInterval": {
+        "steps": 1,
+        "unit": "week"
+       },
+       "lastReview": "2026-10-31T04:20:00.000Z",
+       "nextReview": "2026-11-07T00:00:00.000",
+       "stalled": false,
+       "pending": false,
+       "remainingCount": 2,
+       "availableCount": 1,
+       "dueSoonCount": 0,
+       "overdueCount": 0
+      }
+     },
+     {
+      "kind": "task",
+      "id": "vGjWSneCbRZ",
+      "depth": 0,
+      "task": {
+       "id": "vGjWSneCbRZ",
+       "name": "Step 1",
+       "note": "",
+       "parentId": "qos2iNk_kOl",
+       "projectId": "qos2iNk_kOl",
+       "isProject": false,
+       "inInbox": false,
+       "rank": 0,
+       "flagged": false,
+       "deferDate": null,
+       "plannedDate": null,
+       "dueDate": null,
+       "estimatedMinutes": null,
+       "completed": null,
+       "dropped": null,
+       "added": "2026-10-31T04:20:00.000Z",
+       "modified": "2026-10-31T04:20:00.000Z",
+       "sequential": false,
+       "completedByChildren": false,
+       "repeat": null,
+       "assignedProjectId": null,
+       "tagIds": [
+        "GuYg5uskzwW"
+       ],
+       "attachmentCount": 0,
+       "childCount": 0,
+       "remainingChildCount": 0,
+       "effectiveFlagged": false,
+       "effectiveDeferDate": null,
+       "effectivePlannedDate": null,
+       "effectiveDueDate": null,
+       "effectiveCompleted": false,
+       "effectiveDropped": false,
+       "remaining": true,
+       "deferred": false,
+       "blocked": false,
+       "available": true,
+       "firstAvailable": true,
+       "overdue": false,
+       "dueSoon": false,
+       "status": "next",
+       "projectName": "Garden project"
+      }
+     },
+     {
+      "kind": "task",
+      "id": "M4NUgrDeSn0",
+      "depth": 0,
+      "task": {
+       "id": "M4NUgrDeSn0",
+       "name": "Step 2",
+       "note": "",
+       "parentId": "qos2iNk_kOl",
+       "projectId": "qos2iNk_kOl",
+       "isProject": false,
+       "inInbox": false,
+       "rank": 65536,
+       "flagged": false,
+       "deferDate": null,
+       "plannedDate": null,
+       "dueDate": null,
+       "estimatedMinutes": null,
+       "completed": null,
+       "dropped": null,
+       "added": "2026-10-31T04:20:00.000Z",
+       "modified": "2026-10-31T04:20:00.000Z",
+       "sequential": false,
+       "completedByChildren": false,
+       "repeat": null,
+       "assignedProjectId": null,
+       "tagIds": [
+        "GuYg5uskzwW"
+       ],
+       "attachmentCount": 0,
+       "childCount": 0,
+       "remainingChildCount": 0,
+       "effectiveFlagged": false,
+       "effectiveDeferDate": null,
+       "effectivePlannedDate": null,
+       "effectiveDueDate": null,
+       "effectiveCompleted": false,
+       "effectiveDropped": false,
+       "remaining": true,
+       "deferred": false,
+       "blocked": true,
+       "available": false,
+       "firstAvailable": false,
+       "overdue": false,
+       "dueSoon": false,
+       "status": "blocked",
+       "projectName": "Garden project"
+      }
+     }
+    ]
+   },
+   {
+    "key": "2026-11-01",
+    "date": "2026-11-01",
+    "title": "Tomorrow",
+    "dueCount": 0,
+    "count": 0,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": []
+   },
+   {
+    "key": "2026-11-02",
+    "date": "2026-11-02",
+    "title": "Mon, Nov 2, 2026",
+    "dueCount": 0,
+    "count": 0,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": []
+   },
+   {
+    "key": "2026-11-03",
+    "date": "2026-11-03",
+    "title": "Tue, Nov 3, 2026",
+    "dueCount": 0,
+    "count": 0,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": []
+   },
+   {
+    "key": "2026-11-04",
+    "date": "2026-11-04",
+    "title": "Wed, Nov 4, 2026",
+    "dueCount": 0,
+    "count": 0,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": []
+   },
+   {
+    "key": "FUTURE",
+    "date": null,
+    "title": "Future",
+    "dueCount": 1,
+    "count": 1,
+    "deferredCount": 0,
+    "badge": null,
+    "rows": [
+     {
+      "kind": "task",
+      "id": "xZWD9zs_HK5",
+      "depth": 0,
+      "task": {
+       "id": "xZWD9zs_HK5",
+       "name": "Report",
+       "note": "",
+       "parentId": null,
+       "projectId": null,
+       "isProject": false,
+       "inInbox": true,
+       "rank": 65536,
+       "flagged": false,
+       "deferDate": null,
+       "plannedDate": null,
+       "dueDate": "2026-12-24T09:30:00.000",
+       "estimatedMinutes": null,
+       "completed": null,
+       "dropped": null,
+       "added": "2026-10-31T04:20:00.000Z",
+       "modified": "2026-10-31T04:20:00.000Z",
+       "sequential": false,
+       "completedByChildren": false,
+       "repeat": null,
+       "assignedProjectId": null,
+       "tagIds": [
+        "GuYg5uskzwW"
+       ],
+       "attachmentCount": 0,
+       "childCount": 0,
+       "remainingChildCount": 0,
+       "effectiveFlagged": false,
+       "effectiveDeferDate": null,
+       "effectivePlannedDate": null,
+       "effectiveDueDate": "2026-12-24T09:30:00.000",
+       "effectiveCompleted": false,
+       "effectiveDropped": false,
+       "remaining": true,
+       "deferred": false,
+       "blocked": false,
+       "available": true,
+       "firstAvailable": false,
+       "overdue": false,
+       "dueSoon": false,
+       "status": "available",
+       "projectName": null
+      }
+     }
+    ]
+   }
+  ],
+  "calendar": [
+   {
+    "date": "2026-10-25",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-26",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-27",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-28",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-29",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-30",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-10-31",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-01",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-02",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-03",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-04",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-05",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-06",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-07",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-08",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-09",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-10",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-11",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-12",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-13",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-14",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-15",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-16",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-17",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-18",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-19",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-20",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-21",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-22",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-23",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-24",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-25",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-26",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-27",
+    "dueCount": 0,
+    "count": 0
+   },
+   {
+    "date": "2026-11-28",
+    "dueCount": 0,
+    "count": 0
+   }
+  ]
+ },
+ "settings": {
+  "timeZone": "Australia/Brisbane",
+  "dateFormat": "dd/MM/yyyy",
+  "firstWeekday": 1,
+  "use24HourTime": true,
+  "defaultDeferTime": "00:00",
+  "defaultDueTime": "17:00",
+  "defaultPlannedTime": "09:00",
+  "dueSoonSeconds": 172800,
+  "theme": "system",
+  "forecastTagId": "GuYg5uskzwW"
+ },
+ "chips": {
+  "Report": "24/12/2026 09:30"
+ }
+}

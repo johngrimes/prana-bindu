@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  # SQLite allows a single writer: never run more than one pod, and stop the old pod before starting the new one.
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Chart.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ .Chart.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- if gt (len .Values.pranaBindu.secretConfig) 0 }}
+      annotations:
+        checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+      {{- end }}
+    spec:
+      imagePullSecrets: {{ toJson .Values.pranaBindu.imagePullSecrets }}
+      securityContext: {{ toJson .Values.pranaBindu.podSecurityContext }}
+      terminationGracePeriodSeconds: {{ .Values.pranaBindu.terminationGracePeriodSeconds }}
+      containers:
+        - name: prana-bindu
+          image: {{ .Values.pranaBindu.image | quote }}
+          imagePullPolicy: {{ .Values.pranaBindu.imagePullPolicy | quote }}
+          args: ["serve"]
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          {{- if gt (len .Values.pranaBindu.config) 0 }}
+          env:
+            {{- range $configKey, $configValue := .Values.pranaBindu.config }}
+            - name: {{ $configKey }}
+              value: {{ $configValue | quote }}
+            {{- end }}
+          {{- end }}
+          {{- if gt (len .Values.pranaBindu.secretConfig) 0 }}
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}-secret
+          {{- end }}
+          securityContext: {{ toJson .Values.pranaBindu.securityContext }}
+          resources: {{ toJson .Values.pranaBindu.resources }}
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          # Database migrations run before the server starts listening.
+          startupProbe:
+            httpGet:
+              path: /api/v1/openapi.json
+              port: http
+            periodSeconds: 2
+            failureThreshold: 60
+          livenessProbe:
+            httpGet:
+              path: /api/v1/openapi.json
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /api/v1/openapi.json
+              port: http
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+      volumes:
+        - name: data
+          {{- if .Values.pranaBindu.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-pvc
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+      nodeSelector: {{ toJson .Values.pranaBindu.nodeSelector }}
+      tolerations: {{ toJson .Values.pranaBindu.tolerations }}
+      affinity: {{ toJson .Values.pranaBindu.affinity }}

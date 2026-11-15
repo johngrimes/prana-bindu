@@ -1,0 +1,22 @@
+{{- if .Values.pranaBindu.persistence.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}-pvc
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+    # Keep the database when the release is uninstalled.
+    helm.sh/resource-policy: keep
+spec:
+  accessModes:
+    - {{ .Values.pranaBindu.persistence.accessMode | quote }}
+  {{- if .Values.pranaBindu.persistence.storageClassName }}
+  storageClassName: {{ .Values.pranaBindu.persistence.storageClassName | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.pranaBindu.persistence.size | quote }}
+{{- end }}

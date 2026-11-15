@@ -1,0 +1,29 @@
+// Author: John Grimes
+//
+// Settings shared by every Prana target. Builds for the simulator with no signing team; to run on a device, create
+// the gitignored `Local.xcconfig` beside this file containing `DEVELOPMENT_TEAM = <your team id>`.
+
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+
+SWIFT_VERSION = 6.0
+SWIFT_STRICT_CONCURRENCY = complete
+SWIFT_EMIT_LOC_STRINGS = YES
+ENABLE_USER_SCRIPT_SANDBOXING = YES
+ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES
+
+IPHONEOS_DEPLOYMENT_TARGET = 26.0
+WATCHOS_DEPLOYMENT_TARGET = 26.0
+
+// The app's identity (spec: bundle ids, App Group and URL scheme).
+PRANA_BUNDLE_ID = au.id.grimes.prana-bindu
+PRANA_APP_GROUP = group.au.id.grimes.prana-bindu
+
+// Signing: automatic with a team from Local.xcconfig; without one, simulator builds are signed to run locally.
+CODE_SIGN_STYLE = Automatic
+DEVELOPMENT_TEAM =
+CODE_SIGN_IDENTITY = Apple Development
+CODE_SIGN_IDENTITY[sdk=iphonesimulator*] = -
+CODE_SIGN_IDENTITY[sdk=watchsimulator*] = -
+
+#include? "Local.xcconfig"

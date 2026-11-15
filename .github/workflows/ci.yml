@@ -1,0 +1,150 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Lint, typecheck, test, build, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install chromium --with-deps
+      - run: npm run test:e2e
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  ios:
+    name: iOS app (PranaKit tests, UI tests, watch build)
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: PranaKit unit tests
+        working-directory: ios/PranaKit
+        run: swift test
+      - name: Start a server with the synthetic fixture for the UI tests
+        env:
+          PRANA_DATA_DIR: ${{ runner.temp }}/pb-data
+          PRANA_PORT: "3999"
+        run: |
+          node dist/server/cli/main.js import test/fixtures/synthetic-ofocus.zip
+          echo "PRANA_UITEST_TOKEN=$(node dist/server/cli/main.js token create ci-ui-tests)" >> "$GITHUB_ENV"
+          nohup node dist/server/cli/main.js serve > "$RUNNER_TEMP/server.log" 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://localhost:3999/api/v1/openapi.json -o /dev/null && break; sleep 1; done
+      - name: Build the app and run the UI tests
+        env:
+          TEST_RUNNER_PRANA_UITEST_ORIGIN: http://localhost:3999
+        run: |
+          export TEST_RUNNER_PRANA_UITEST_TOKEN="$PRANA_UITEST_TOKEN"
+          xcodebuild test -project ios/Prana.xcodeproj -scheme Prana \
+            -destination 'platform=iOS Simulator,name=iPhone 17,OS=latest' \
+            -resultBundlePath "$RUNNER_TEMP/Prana.xcresult"
+      - name: Run the iPad-only UI tests (hardware keyboard, drag and drop, attachment drops, portrait split view)
+        env:
+          TEST_RUNNER_PRANA_UITEST_ORIGIN: http://localhost:3999
+        run: |
+          export TEST_RUNNER_PRANA_UITEST_TOKEN="$PRANA_UITEST_TOKEN"
+          xcodebuild test -project ios/Prana.xcodeproj -scheme Prana \
+            -destination 'platform=iOS Simulator,name=iPad Pro 11-inch (M5),OS=latest' \
+            -only-testing:PranaUITests/KeyboardUITests -only-testing:PranaUITests/SidebarDropUITests \
+            -only-testing:PranaUITests/PadShellUITests -only-testing:PranaUITests/AttachmentDropUITests \
+            -resultBundlePath "$RUNNER_TEMP/PranaPad.xcresult"
+      - name: Build the watch app
+        run: |
+          xcodebuild build -project ios/Prana.xcodeproj -scheme PranaWatch \
+            -destination 'generic/platform=watchOS Simulator'
+      - name: Upload test results and server log
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: ios-test-results
+          path: |
+            ${{ runner.temp }}/Prana.xcresult
+            ${{ runner.temp }}/PranaPad.xcresult
+            ${{ runner.temp }}/server.log
+          retention-days: 7
+
+  docker:
+    name: Docker image builds and starts
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+      - run: docker build --label "org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}" -t prana-bindu:ci .
+      - name: Start the container and probe it
+        run: |
+          docker run -d --name pb -p 3000:3000 prana-bindu:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:3000/api/v1/openapi.json -o /tmp/openapi.json; then break; fi
+            sleep 1
+          done
+          docker logs pb
+          grep -q '"openapi":"3.1.0"' /tmp/openapi.json
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/api/v1/auth/session)" = 401
+          curl -fsS -H 'Accept: text/html' http://localhost:3000/inbox | grep -qi '<!doctype html>'
+          docker exec pb prana-bindu token list
+      - name: Stop
+        if: always()
+        run: docker rm -f pb || true
+      - name: Push the image to GHCR
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          IMAGE="ghcr.io/${{ github.repository }}:sha-${GITHUB_SHA::7}"
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker tag prana-bindu:ci "$IMAGE"
+          docker push "$IMAGE"
+
+  chart:
+    name: Publish the Helm chart
+    needs: [test, docker]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Push the chart, pinned to this commit's image, to GHCR
+        run: |
+          IMAGE="ghcr.io/${{ github.repository }}:sha-${GITHUB_SHA::7}"
+          VERSION="$(yq '.version' helm/prana-bindu/Chart.yaml)-main.${GITHUB_RUN_NUMBER}"
+          yq -i ".pranaBindu.image = \"$IMAGE\"" helm/prana-bindu/values.yaml
+          helm package helm/prana-bindu --version "$VERSION" --app-version "sha-${GITHUB_SHA::7}" --destination /tmp/chart
+          echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io -u "${{ github.actor }}" --password-stdin
+          helm push "/tmp/chart/prana-bindu-$VERSION.tgz" "oci://ghcr.io/${{ github.repository_owner }}/charts"
