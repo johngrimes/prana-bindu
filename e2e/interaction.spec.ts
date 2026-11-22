@@ -157,6 +157,22 @@ test.describe("mobile", () => {
     await expect(row(page, "gamma")).toBeVisible();
     await expect(grips(page)).toHaveCount(0);
   });
+
+  test("a tap straight after a touch drag is not swallowed", async ({ signedIn: page, api }) => {
+    const project = await api.post<Project>("/projects", { name: uniq("Tap after drag") });
+    await api.post<Task>("/tasks", { name: "alpha", projectId: project.id });
+    await api.post<Task>("/tasks", { name: "beta", projectId: project.id });
+    await page.goto(`/projects?project=${project.id}`);
+    await expect(row(page, "beta")).toBeVisible();
+    await page.getByRole("button", { name: "More actions" }).click();
+    await page.getByRole("menuitem", { name: "Reorder" }).click();
+    const grip = (await row(page, "beta").locator("[data-drag-handle]").boundingBox())!;
+    const x = grip.x + grip.width / 2;
+    await touchDrag(page, { x, y: grip.y + grip.height / 2 }, { x, y: (await row(page, "alpha").boundingBox())!.y + 4 });
+    // dispatchEvent skips actionability waits, so the click lands within milliseconds of the drop.
+    await page.getByRole("button", { name: "More actions" }).dispatchEvent("click");
+    await expect(page.getByRole("menuitem", { name: "Done Reordering" })).toBeVisible();
+  });
 });
 
 test("desktop keyboard flow: N, Enter, ], [, Shift-arrows, K", async ({ signedIn: page }) => {

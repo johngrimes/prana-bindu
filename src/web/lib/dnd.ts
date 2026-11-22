@@ -92,7 +92,9 @@ export function beginDrag(source: DragSource, start: { x: number; y: number; poi
       const { kind, id, pos } = target;
       source.drop({ kind, id, pos });
     }
-    // Swallow the click that follows a mouse drag.
+    // Swallow the click that follows a mouse or pen drag. A touch drag fires no click, so a listener left
+    // waiting would eat the user's next tap instead.
+    if (e.pointerType === "touch") return;
     const swallow = (ev: MouseEvent) => {
       ev.stopPropagation();
       ev.preventDefault();
