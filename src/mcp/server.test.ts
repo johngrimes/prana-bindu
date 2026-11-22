@@ -127,4 +127,16 @@ describe("MCP server", () => {
     expect(body.result.structuredContent.name).toBe("via http");
     expect(env.domain.listTasks({ inbox: true }).items.map((t) => t.name)).toEqual(["via http"]);
   });
+
+  it("rejects GET and DELETE with 405 since stateless mode offers no SSE stream or session", async () => {
+    const env = createTestEnv();
+    const app = new Hono();
+    app.all("/mcp", (c) => handleMcpRequest(c, { domain: env.domain, blobStore: env.blobStore }));
+    for (const method of ["GET", "DELETE"]) {
+      const res = await app.request("/mcp", { method, headers: { accept: "text/event-stream", "mcp-protocol-version": "2025-06-18" } });
+      expect(res.status).toBe(405);
+      expect(res.headers.get("allow")).toBe("POST");
+      expect(await res.json()).toEqual({ jsonrpc: "2.0", error: { code: -32000, message: "Method not allowed." }, id: null });
+    }
+  });
 });
